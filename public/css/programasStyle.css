@@ -1,0 +1,54 @@
+.bloque-cabecera-programas {
+    box-sizing: border-box;
+    width: 75%;
+
+    margin-left: 260px;
+    padding: 2% 1%;
+}
+.bloque-cabecera-programas__bloque-atras-buscar {
+
+    padding: 1% 1%;
+}
+.bloque-atras-buscar__btn-atras {
+    background-color: #0644e3;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    outline: 5px solid #0644e3;
+    border-radius: 5%;
+    display: inline-block;
+    position: relative;
+}
+.bloque-atras-buscar__bloque-buscador {
+    display: inline-block;
+    position: relative;
+    left: 60%;
+
+}
+
+.bloque-cabecera-programas__bloque-titulo-agregar {
+   
+}
+.bloque-titulo-agregar__titulo {
+    display: inline-block;
+}
+.bloque-titulo-agregar__btn-agregar {
+    background-color: #05690F;
+    color: #ffffff;
+    border: none;
+    outline: 5px solid #05690F;
+    border-radius: 5%;
+    position: relative;
+    left: 75%;
+}
+
+.bloque-programas {
+    margin-left: 260px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.bloque-programas__bloque-info-programa {
+    border: 2px solid #808080;
+    padding: 2%;
+}
