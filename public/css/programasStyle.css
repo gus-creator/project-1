@@ -1,54 +1,188 @@
-.bloque-cabecera-programas {
-    box-sizing: border-box;
-    width: 75%;
-
-    margin-left: 260px;
-    padding: 2% 1%;
+.container__header {
+    
 }
-.bloque-cabecera-programas__bloque-atras-buscar {
-
-    padding: 1% 1%;
+.container__body {
+    
 }
-.bloque-atras-buscar__btn-atras {
-    background-color: #0644e3;
-    color: #ffffff;
-    font-weight: bold;
-    border: none;
-    outline: 5px solid #0644e3;
-    border-radius: 5%;
-    display: inline-block;
-    position: relative;
+.body-programas {
+    width: 100%;
 }
-.bloque-atras-buscar__bloque-buscador {
-    display: inline-block;
-    position: relative;
-    left: 60%;
-
+.body-programas__block-superior {
+    
 }
-
-.bloque-cabecera-programas__bloque-titulo-agregar {
-   
+.body-programas__block-superior-buscador {
+    
+    display: flex;
+    justify-content: flex-end;
+    padding: 2%;
 }
-.bloque-titulo-agregar__titulo {
-    display: inline-block;
-}
-.bloque-titulo-agregar__btn-agregar {
-    background-color: #05690F;
-    color: #ffffff;
-    border: none;
-    outline: 5px solid #05690F;
-    border-radius: 5%;
-    position: relative;
-    left: 75%;
-}
-
-.bloque-programas {
-    margin-left: 260px;
+.body-programas__block-superior-agregar {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-left: 2%;
     padding-right: 2%;
 }
-
-.bloque-programas__bloque-info-programa {
-    border: 2px solid #808080;
+.body-programas__block-superior-btn-agregar {
+    height: 25px;
+    background-color: #05690F;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #05690F;
+    cursor: pointer;
+}
+.body-programas__block-superior-btn-agregar:hover {
+    background-color: #059822;
+}
+.body-programas__block-superior-tipo {
+    font-weight: bold;
+}
+.body-programas__block-inferior {
+    
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.body-programas__programa {
+    
+    outline: 1px solid #999;
+    display: flex;
+}
+.body-programas__img-programa {
+    
+    width: 160px;
+    height: 200px;
+}
+.body-programas__img-programa img {
+    width: 100%;
+    height: 100%;
+}
+.body-programas__info-programa {
+    
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.body-programas__info-programa-nombre {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.body-programas__block-btns {
+    
+    display: flex;
+    justify-content: space-between;
+}
+/*---------------------MODAL DE REGISTRO---------------------*/
+.registro-modal {
+    transform: translateY(-100%);
+    transition: transform .3s ease;
+    position: absolute;
+    top: 0;
+    left: 10vw;
+    width: 80vw; /*era 70vw*/
+    height: auto;
+    z-index: 2000;
+    /*border: 1px solid #222;*/
+    background-color: #fff;
+}
+.registro-modal label, input {
+    display: block;
+}
+.registro-modal__input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 6px;
+}
+.input-descripcion {
+    width: 500px;
+    height: 100px;
+}
+.input-horas,
+.input-creditos {
+    width: 70%;
+}
+.registro-modal--desplegado {
+    transform: translateY(0);
+}
+.registro-modal__formulario {
+    display: grid;
+    grid-template-areas: 
+        "cuerpo"
+        "pie";
+}
+.registro-modal__formulario-cuerpo {
+    grid-area: cuerpo;
+    display: flex;
+}
+.registro-modal__sub-titulo {
+    font-weight: bold;
+    text-align: center;
+}
+.registro-modal__formulario-cuerpo-datos-grales {
+    width: 50%;
     padding: 2%;
+}
+.registro-modal__block-descripcion,
+.registro-modal__block-imagen {
+    padding: 4% 4% 0 0;
+}
+
+.registro-modal__formulario-cuerpo-detalles {
+    width: 50%;
+    padding: 2%;
+}
+.registro-modal__block-fechas,
+.registro-modal__block-version-estado,
+.registro-modal__block-horas-creditos {
+    display: flex;
+    justify-content: space-between;
+    padding: 4% 4% 0 0;
+}
+.registro-modal__block-resolucion {
+    padding: 4% 4% 0 0;
+}
+.registro-modal__formulario-pie {
+    grid-area: pie;
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+.registro-modal__btn-registrar {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+.btn-registrar-habilitado {
+    background-color: #05690F;
+    color: #fff;
+    border: 1px solid #05690F;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+.btn-registrar-habilitado:hover {
+    background-color: #059822;
+}
+.registro-modal__btn-cancelar {
+    background-color: #ccc;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+.registro-modal__btn-cancelar:hover {
+    background-color: #ddd;
+}
+.msj-error {
+    color: #f00;
+    font-size: 14px;
+}
+
+@media (max-width: 1032px) {
+    .registro-modal__formulario {
+        display: flex;
+        flex-direction: column;
+    }
+    .registro-modal__formulario-cuerpo {
+        display: flex;
+        flex-direction: column;
+    }
 }

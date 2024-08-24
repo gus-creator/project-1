@@ -1,85 +1,161 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
+/*----------CREACION DEL GRID CONTAINER-----------*/
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ddd;
+    display: grid;
+    grid-template-areas: 
+        "aside header"
+        "aside body";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 5fr;
+    column-gap: .3%;
+}
+.container__header {
+    grid-area: header;
     background-color: #fff;
-    padding-top: 20px;
-    border-right: 5px solid #eeeeee;
-    transition: width 0.3s;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2%
 }
-
-.sidebar__titulo {
-    padding-left: 30px;
-}
-
-.sidebar__bloque-home,
-.sidebar__bloque-redes-sociales,
-.sidebar__bloque-usuarios-roles {
-    padding-left: 30px;
-}
-.bloque-home__titulo,
-.bloque-redes-sociales__titulo,
-.bloque-usuarios-roles__titulo {
-    color: #9e9e9e;
-}
-
-.bloque-home__enlace,
-.bloque-redes-sociales__enlace,
-.bloque-usuarios-roles__enlace,
-.bloque-desplegable__enlace {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block;
-}
-.sidebar a:hover {
-    /*font-weight: bold;*/
-    color: #808080;
-}
-.bloque-home__boton-programas {
-    padding: 10px 15px;
-    font-size: 18px;
-    color: black;
-    display: block;
-    border: none;
-    background-color: #fff;
-}
-.bloque-home__boton-programas:hover {
-    /*font-weight: bold;*/
-    color: #808080;
-    cursor: pointer;
-}
-.bloque-home__bloque-desplegable {
+.container__header-btn-desplegar {
     display: none;
 }
-
-.bloque-salir {
-    margin-left: 260px;
-    margin-top: 1.5%;
-    padding-left: 2%;
-}
-.bloque-salir__ruta {
-    display: inline-block;
-}
-.bloque-salir__boton-salir {
-    color: #009117;
-    background-color: #fff;
+.container__header-btn-salir {
+    display: flex;
+    align-items: center;
     border: none;
-    margin-left: 80%;
+    cursor: pointer;
+    background-color: inherit;
+    color: #05690F;
+}
+.container__header-btn-salir-img {
+    width: 39px;
+    height: 39px;
+}
+.container__header-btn-salir:hover {
+    color: #27ae60;
 }
 
-.contenido {
-    margin-left: 260px;
-    margin-top: 60px;
-    padding: 20px;
-    transition: margin-left 0.3s;
+.container__aside {
+    grid-area: aside;
+    background-color: #fff;
+}
+.container__body {
+    grid-area: body;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*-------------ESTILIZADO DE LOS ELEMENTOS DEL ASIDE--------------*/
+/*BLOQUE LOGO*/
+.container__aside-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container__aside-logo-nombre {
+    font-weight: bold;
     text-align: center;
+}
+.container__aside-btn-ocultar {
+    display: none;
+}
+.container__aside-logo-imagen {
+    width: 40%;
+}
+/*BLOQUE PROGRAMAS*/
+.container__aside-block-programas {
+    display: none;
+}
+.container__aside-block-programas--desplegado {
+    display: block;
+    padding-left: 15%;
+    margin-bottom: 10%;
+}
+/*DEMAS BLOQUES*/
+.container__aside-home,
+.container__aside-redes-sociales,
+.container__aside-usuarios-roles,
+.container__aside-usuario {
+    padding: 10% 10% 20% 20%;
+}
+.container__aside-nombre-bloque {
+    font-size: .8em;
+    color: #555;
+}
+/*ENLACES EN LOS BLOQUES*/
+.container__aside a {
+    display: block;
+    text-decoration: none;
+    color: #111;
+    margin-top: 5%;
+}
+.container__aside button {
+    border: none;
+    background-color: inherit;
+    margin-top: 5%;
+    padding: 0;
+    cursor: pointer;
+}
+/*-------------ESTILIZADO DE LOS ELEMENTOS DEL BODY----------------*/
+.container__body-welcome-text {
+    font-size: 2em;
+    color: #888;
+    text-align: center;
+    padding: 1% 20%;
+}
+.container__body-logo-unibol {
+    height: 50%;
+    opacity: .5;
+}
+/*------------ADAPTACION A PANTALLAS MENORES DE 768 px-----------*/
+@media (max-width: 768px) {
+
+    .container {
+        column-gap: 0%;
+    }
+    .container__aside {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60vw;
+        height: 100vh;
+        z-index: 1000;
+        background-color: #fff;
+        overflow: auto;
+    }
+    .container__aside-btn-ocultar {
+        display: inline;
+        position: absolute;
+        left: 90%;
+        z-index: 2000;
+    }
+    .container__header {
+        grid-column: 1 / 3;
+        justify-content: space-between;
+    }
+    .container__header-btn-desplegar {
+        display: inline;
+    }
+    .container__body {
+        grid-column: 1 / 3;
+    }
+
+}
+
+.container__aside--desplegado {
+    transform: translateX(0);
+}
+
+.container__header--oscurecido,
+.container__body--oscurecido,
+.container__aside--oscurecido {
+    filter: brightness(70%);
 }
