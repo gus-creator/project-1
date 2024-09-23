@@ -1,0 +1,66 @@
+.container-modulos {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-modulos__block-atras {
+    margin-bottom: 15px;
+}
+.container-modulos__btn-atras {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #0644E3;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #0644E3;
+}
+.container-modulos__btn-atras:hover {
+    background-color: #00009a;
+}
+
+.container-modulos__nombre-programa {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.container-modulos__block-btns {
+    display: flex;
+    justify-content: space-between;
+}
+.container-modulos__btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #05690F;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #05690F;
+}
+.container-modulos__btn:hover {
+    background-color: #074907;
+}
+
+.container-modulos__block-tabla {
+    width: 100%;
+}
+.container-modulos__block-tabla table, td {
+    border: 1px solid #111;
+    border-collapse: collapse;
+}
+.container-modulos__tabla-modulos {
+    width: 100%;
+}
+.container-modulos__tabla-modulos-fila-cabecera {
+    font-weight: bold;
+}
+.container-modulos__tabla-btn-editar, .container-modulos__tabla-btn-eliminar {
+    background-color: #fff;
+    border: none;
+}
+.container-modulos__tabla-btn-editar:hover {
+    background-color: #2062b8;
+}
+.container-modulos__tabla-btn-eliminar:hover {
+    background-color: #eb5e5e;
+}

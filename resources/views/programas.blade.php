@@ -134,7 +134,7 @@
                             <p class="body-programas__info-programa-nombre">{{ $programa->nombre_programa }}</p>
                             <p class="body-programas__info-programa-descripcion">{{ $programa->descripcion }}</p>
                             <div class="body-programas__block-btns">
-                                <button class="body-programas__btn-detalles">Ver detalles</button>
+                                <a href="{{ route('programa.detalle', ['idPrograma'=>$programa->id_programa]) }}">Ver detalles</a>
                                 <button class="body-programas__btn-editar">Editar</button>
                             </div>
                         </div>

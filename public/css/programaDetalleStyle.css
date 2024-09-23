@@ -1,0 +1,76 @@
+.container-detalle-programa {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 95%;
+    
+}
+.container-detalle-programa__block-btn-atras {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.container-detalle-programa__block-btn-atras a{
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #0644E3;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #0644E3;
+}
+.container-detalle-programa__block-nombre-programa p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.container-detalle-programa__block-btns {
+    display: flex;
+    justify-content: space-between;
+}
+.container-detalle-programa__block-btns-1 {
+    width: 50%;
+    display: flex;
+}
+.container-detalle-programa__block-btns-1 a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #05690F;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #05690F;
+    margin-right: 10px;
+}
+.container-detalle-programa__block-btns-2 {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+.container-detalle-programa__block-btns-2 button {
+    padding: 10px 20px;
+    background-color: #05690F;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #05690F;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.container-detalle-programa__bloque-datos {
+    width: 100%;
+    height: 90%;
+}
+.container-detalle-programa__bloque-datos-titulo p {
+    font-weight: bold;
+}
+.container-detalle-programa__bloque-datos-los-datos {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.container-detalle-programa__bloque-datos-los-datos label {
+    font-weight: bold;
+}
+.container-detalle-programa__input {
+    width: 300px;
+}

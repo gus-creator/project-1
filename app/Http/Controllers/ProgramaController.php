@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class ProgramaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muetras todos los programas académicos del tipo indicado
      */
     public function index($tipo)
     {
@@ -37,32 +37,6 @@ class ProgramaController extends Controller
      */
     public function store(Request $request, $tipo)
     {
-        /*$request->validate([
-            'nombrePrograma' => 'required',
-            'descripcion' => 'required',
-            'imagen' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'codigo' => 'required',
-            'gestionIni' => 'required',
-            'gestionFin' => 'required',
-            'version' => 'required',
-            'horas' => 'required',
-            'creditos' => 'required',
-            'resolucion' => 'required'
-        ], [
-            'nombrePrograma.required' => 'El campo nombre debe ser llenado',
-            'descripcion.required' => 'El campo descripción debe ser llenado',
-            'imagen.required' => 'El campo descripción debe ser llenado',
-            'imagen.image' => 'El archivo que trata de subir no es una imagen',
-            'imagen.mimes' => 'Los formatos de imagen validos son: jpeg, png, jpg, gif, svg',
-            'codigo.required' => 'El campo código debe ser llenado',
-            'gestionIni.required' => 'El campo gestión inicio debe ser llenado',
-            'gestionFin.required' => 'El campo gestión fin debe ser llenado',
-            'version.required' => 'El campo versión del programa debe ser llenado',
-            'horas.required' => 'El campo horas debe ser llenado',
-            'creditos.required' => 'El campo creditos debe ser llenado',
-            'resolucion.required' => 'El campo resolución debe ser llenado'
-        ]);*/
-
         // Definir reglas de validación
         $validator = Validator::make($request->all(), [
             'nombrePrograma' => 'required',
@@ -108,11 +82,13 @@ class ProgramaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Muestra los detalles del programa seleccionado
      */
-    public function show(string $id)
+    public function show($idPrograma)
     {
-        //
+        $programa = Programa::where('id_programa', $idPrograma)->first();
+
+        return view('programaDetalle',['programa'=>$programa]);
     }
 
     /**
